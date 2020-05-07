@@ -98,7 +98,7 @@ export class Bot extends EventEmitter {
                     return message.channel.send(this.messages.memberMissingPermissions);
                 }
                 if(cmd.data.botPermissions && !message.channel.permissionsFor(message.guild.me).has(cmd.data.botPermissions)){
-                   return message.channel.send(this.messages.clientMissingPermissions);
+                   return message.channel.send(this.messages.botMissingPermissions);
                 }
             } else if(cmd.data.guildOnly){
                 return message.channel.send(this.messages.guildOnly);
