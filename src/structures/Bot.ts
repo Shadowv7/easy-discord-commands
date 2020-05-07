@@ -32,7 +32,7 @@ export class Bot extends EventEmitter {
 
         this.messages = {
             memberMissingPermissions: "You don't have the right permissions to run this command!",
-            clientMissingPermissions: "I don't have the right permissions to run this command!",
+            botMissingPermissions: "I don't have the right permissions to run this command!",
             guildOnly: "This command can only be run on a server!",
             showPrefix: "the prefix of this server is {{prefix}}!"
         };
