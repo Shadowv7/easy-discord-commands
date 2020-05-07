@@ -1,5 +1,5 @@
 import { EventEmitter } from "events";
-import { Client, ClientOptions, Message, PermissionString } from "discord.js";
+import { Client, ClientOptions, Message, PermissionString, TextChannel } from "discord.js";
 import { BotOptions, Command, CommandData } from "../types";
 
 interface MessageData {
@@ -97,7 +97,7 @@ export class Bot extends EventEmitter {
                 ){
                     return message.channel.send(this.messages.memberMissingPermissions);
                 }
-                if(cmd.data.botPermissions && !message.channel.permissionsFor(message.guild.me).has(cmd.data.botPermissions)){
+                if(cmd.data.botPermissions && !(message.channel as TextChannel).permissionsFor(message.guild.me).has(cmd.data.botPermissions)){
                    return message.channel.send(this.messages.botMissingPermissions);
                 }
             } else if(cmd.data.guildOnly){
