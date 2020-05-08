@@ -5,4 +5,5 @@ export interface BotOptions {
     token: string;
     clientOptions: ClientOptions;
     showPrefixOnMention: boolean;
+    ownerID: string;
 };
